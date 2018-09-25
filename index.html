@@ -8,7 +8,10 @@
    		 <meta name="author" content="Jeremy Goldsmith">
      		 <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
    		 <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-	  	
+	  	 <style>
+       		 	body { margin:0; padding:0; }
+       			#map { position:absolute; top:0; bottom:0; width:100%; }
+    	  	 </style>
 	</head>
           
 	<!-- MAKE COMMENTS AFTER the EXCLAMATION MARK -->
@@ -20,7 +23,7 @@
         	display: block;
         	position: relative;
         	margin: 0px auto;
-        	width: 25%;
+        	width: 50%;
         	height: 10px;
 	       	padding: 5px;
 		border: none;
@@ -31,7 +34,7 @@
   	      background: #ee8a65;
  	   }
 	</style>	
-		<div id='map' style='width: 400px; height: 300px;'></div>
+		<div id='map' style='width: 800px; height: 600px;'></div>
 		<br/>
 		<button id='fly'>fly</button>
 	<script>
