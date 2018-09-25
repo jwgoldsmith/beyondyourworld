@@ -44,7 +44,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [42.671546, 63.457334],
-    zoom: 5
+    zoom: 3
 });
 
 document.getElementById('fly').addEventListener('click', function () {
@@ -52,8 +52,9 @@ document.getElementById('fly').addEventListener('click', function () {
     // by up to 5 degrees.
   map.flyTo({
     center: [
-            42.671546,
-            63.457334]
+            42.671546 + (0.5) * 10,
+            63.457334 + (0.5) * 10]
+    });
     });
 });
 </script>
