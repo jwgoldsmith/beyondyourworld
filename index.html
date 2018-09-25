@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset='utf-8' />
-    <title>Fly to a location</title>
+    <title>Beyond Your World - UNESCO Zoom to Bolshoy Zayatsky</title>
     <title>Beyond Your World Custom Animation 1 – Bolshoy Zayatsky UNESCO Site</title>
     <meta name="author" content="Jeremy Goldsmith">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -47,15 +47,25 @@ var map = new mapboxgl.Map({
     zoom: 3 //starting zoom
 });
 
-document.getElementById('fly').addEventListener('click', function () {
+// document.getElementById('fly').addEventListener('click', function () {
     // Fly to a random location by offsetting the point -74.50, 40
     // by up to 5 degrees.
-  map.flyTo({
-    center: [35.67460390284256,64.97063476856945], //UNESCO site location
-    zoom: 14, // resulting zoom
-    speed: 0.2,
-    curve: 1,  
-    });
+ // map.flyTo({
+   // center: [35.67460390284256,64.97063476856945], //UNESCO site location
+   // zoom: 14, // resulting zoom
+   // speed: 0.2, //speed of camera zoom
+   // curve: 1, //curvature of zoom path
+   // });
+//});
+	
+map.flyTo({
+  center: [35.67460390284256,64.9706347685694],
+  zoom: 14,
+  speed: 0.2,
+  curve: 1,
+  easing(t) {
+    return t;
+  }
 });
 </script>
 
