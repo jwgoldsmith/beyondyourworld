@@ -46,27 +46,18 @@ var map = new mapboxgl.Map({
     center: [42.671546, 63.457334], //staring position
     zoom: 3 //starting zoom
 });
-
-// document.getElementById('fly').addEventListener('click', function () {
+	
+document.getElementById('fly').addEventListener('click', function () {
     // Fly to a random location by offsetting the point -74.50, 40
     // by up to 5 degrees.
- // map.flyTo({
-   // center: [35.67460390284256,64.97063476856945], //UNESCO site location
-   // zoom: 14, // resulting zoom
-   // speed: 0.2, //speed of camera zoom
-   // curve: 1, //curvature of zoom path
-   // });
-//});
-	
-map.flyTo({
-  center: [35.67460390284256,64.9706347685694],
-  zoom: 14,
-  speed: 0.2,
-  curve: 1,
-  easing(t) {
-    return t;
-  }
+    map.flyTo({
+        center: [
+            35.67460390284256 + (0.00000015),
+            64.9706347685694 + (0.00000015)] 
+    zoom: 14,
+    });
 });
+
 </script>
 
 </body>
