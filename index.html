@@ -24,12 +24,12 @@
         display: block;
         position: relative;
         margin: 0px auto;
-        width: 50%;
-        height: 40px;
-        padding: 10px;
+        width: 25%;
+        height: 20px;
+        padding: 5px;
         border: none;
         border-radius: 3px;
-        font-size: 12px;
+        font-size: 7px;
         text-align: center;
         color: #fff;
         background: #ee8a65;
@@ -43,7 +43,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.c
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    center: [-74.50, 40],
+    center: [42.671546, 63.457334],
     zoom: 14
 });
 
@@ -52,8 +52,8 @@ document.getElementById('fly').addEventListener('click', function () {
     // by up to 5 degrees.
     map.flyTo({
         center: [
-            -74.50 + (Math.random() - 0.5) * 10,
-            40 + (Math.random() - 0.5) * 10]
+            42.671546 + (Math.random() - 0.5) * 10,
+            63.457334 + (Math.random() - 0.5) * 10]
     });
 });
 </script>
