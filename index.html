@@ -1,63 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <html lang="en">
-
-	<head>
-   		 <meta charset="utf-8">
-		 <title>Beyond Your World Custom Animation 1 – Bolshovky Island</title>
-   		 <meta name="description" content="Jeremy Goldsmith for David Urban (Client)">
-   		 <meta name="author" content="Jeremy Goldsmith">
-     		 <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-   		 <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-	  	 <style>
-       		 	body { margin:0; padding:0; }
-       			#map { position:absolute; top:0; bottom:0; width:100%; }
-    	  	 </style>
-	</head>
+<head>
+    <meta charset='utf-8' />
+    <title>Fly to a location</title>
+    <title>Beyond Your World Custom Animation 1 – Bolshovky Island</title>
+    <meta name="author" content="Jeremy Goldsmith">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
           
 	<!-- MAKE COMMENTS AFTER the EXCLAMATION MARK -->
 
 	<body>
-		
+	
 	<style>
-    	   #flybutton {
-        	display: block;
-        	position: relative;
-        	margin: 0px auto;
-        	width: 50%;
-        	height: 10px;
-	       	padding: 5px;
-		border: none;
-	        border-radius: 3px;
-        	font-size: 6px;
-   	     	text-align: center;
-        	color: #fff;
-  	      background: #ee8a65;
- 	   }
-	</style>	
-		<div id='map' style='width: 800px; height: 600px;'></div>
-		<br/>
-		<button id='fly'>fly</button>
-	<script>
- 	  mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
-	  var map = new mapboxgl.Map({
- 	  container: 'map',
-  	  style: 'mapbox://styles/mapbox/light-v9'
-	  center: [-74.50, 40]
-          zoom: 4
- 	 });
-		
-	document.getElementById('fly').addEventListener('click', function () {
-   	// Fly to a random location by offsetting the point -74.50, 40
-    	// by up to 5 degrees.
-    	map.flyTo({
-       	 center: [
+    #fly {
+        display: block;
+        position: relative;
+        margin: 0px auto;
+        width: 50%;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        background: #ee8a65;
+    }
+</style>
+<div id='map'></div>
+<br/>
+<button id='fly'>Fly</button>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    center: [-74.50, 40],
+    zoom: 4
+});
+
+document.getElementById('fly').addEventListener('click', function () {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+    map.flyTo({
+        center: [
             -74.50 + (Math.random() - 0.5) * 10,
             40 + (Math.random() - 0.5) * 10]
-   	 });
-	});
-		
-	</script>
-    
-   
-	</body>
+    });
+});
+</script>
+
+</body>
 </html>
