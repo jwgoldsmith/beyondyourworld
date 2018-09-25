@@ -1,18 +1,28 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-		<title>CartoDesigner – Presentation Framework to Justify Hiring</title>
-    <meta name="description" content="Jeremy Goldsmith, The Wilderness Society Application-Completely Transparent">
-    <meta name="author" content="Jeremy Goldsmith">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-</head>
-          <!-- MAKE COMMENTS AFTER the EXCLAMATION MARK -->
+	<head>
+   		 <meta charset="utf-8">
+		 <title>CartoDesigner – Presentation Framework to Justify Hiring</title>
+   		 <meta name="description" content="Jeremy Goldsmith, The Wilderness Society Application-Completely Transparent">
+   		 <meta name="author" content="Jeremy Goldsmith">
+     		 <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+   		 <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+	</head>
+          
+	<!-- MAKE COMMENTS AFTER the EXCLAMATION MARK -->
 
 	<body>
+		
+		<div id='map' style='width: 400px; height: 300px;'></div>
+	<script>
+ 	  mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
+	  var map = new mapboxgl.Map({
+ 	  container: 'map',
+  	  style: 'mapbox://styles/mapbox/streets-v10'
+ 	 });
+	</script>
     
-    
+   
 	</body>
 </html>
