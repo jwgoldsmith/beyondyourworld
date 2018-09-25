@@ -39,25 +39,48 @@
 <br/>
 <button id='fly'>Fly</button>
 <script>
+	
+	
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
+var start = [-74.50, 40];
+var end = [74.50, 40];
 var map = new mapboxgl.Map({
     container: 'map', //container-id
     style: 'mapbox://styles/mapbox/light-v9', //mapbox vector basemap style
-    center: [42.671546, 63.457334], //staring position
+    center: start, //staring position
     zoom: 3 //starting zoom
 });
 	
-document.getElementById('fly').addEventListener('click', function () {
-    // Fly to a random location by offsetting the point -74.50, 40
-    // by up to 5 degrees.
+var isAtStart = true;
+
+document.getElementById('fly').addEventListener('click', function() {
+    // depending on whether we're currently at point a or b, aim for
+    // point a or b
+    var target = isAtStart ? end : start;
+
+    // and now we're at the opposite point
+    isAtStart = !isAtStart;
+
     map.flyTo({
-        center: [
-            35.67460390284256 + (0.00000015),
-            64.9706347685694 + (0.00000015)] 
-   // zoom: 14,
+        // These options control the ending camera position: centered at
+        // the target, at zoom level 9, and north up.
+        center: target,
+        zoom: 9,
+        bearing: 0,
+
+        // These options control the flight curve, making it move
+        // slowly and zoom out almost completely before starting
+        // to pan.
+        speed: 0.2, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
+
+        // This can be any easing function: it takes a number between
+        // 0 and 1 and returns another number between 0 and 1.
+        easing: function (t) {
+            return t;
+        }
     });
 });
-
 </script>
 
 </body>
