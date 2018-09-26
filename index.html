@@ -19,7 +19,7 @@
 
 	<body>
 	
-	<style>
+<style>
     #fly {
         display: block;
         position: relative;
@@ -34,25 +34,27 @@
         color: #fff;
         background: #ee8a65;
     }
+
 </style>
 <div id='map'></div>
 <br/>
 <button id='fly'>Fly</button>
 <script>
 	
-// Bolshovky Island Center Coordinates 35.67460390284256,64.9706347685694 
-// Start Center 42.671546, 63.457334 Zoom 3
+// Bolshovky Island Center Coordinates 35.67460390284256, 64.9706347685694 
+// Angelisk Oblisk Province Center 42.671546, 63.457334 Zoom 3
+// Surgut City Cetner Coordinates = 73.52784272461815, 61.17434727269719 Zoom 3.5
 	
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
-var start = [42.671546, 63.457334];
+var start = [73.52784272461815, 61.17434727269719];
 var end = [35.67460390284256,64.9706347685694];
 var map = new mapboxgl.Map({
     container: 'map', //container-id
     style: 'mapbox://styles/jeremywgoldsmith/cjmigyta86mlx2snzranr3eb0', //custom BYW mapbox basemap style
     center: start, //staring position
     zoom: 3.5, //starting zoom
-    pitch: 25,
-    bearing: -33
+    pitch: 33,
+    bearing: -30
 });
 	
 var isAtStart = true;
