@@ -51,7 +51,8 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/jeremywgoldsmith/cjmigyta86mlx2snzranr3eb0', //custom BYW mapbox basemap style
     center: start, //staring position
     zoom: 3.5, //starting zoom
-    pitch: 10
+    pitch: 25,
+    bearing: -33
 });
 	
 var isAtStart = true;
@@ -69,14 +70,14 @@ document.getElementById('fly').addEventListener('click', function() {
         // These options control the ending camera position: centered at
         // the target, at zoom level 9, and north up.
         center: target,
-        zoom: 12,
+        zoom: 13.4,
         bearing: 0,
 
         // These options control the flight curve, making it move
         // slowly and zoom out almost completely before starting
         // to pan.
         speed: 0.6, // make the flying slow
-        curve: 3.3, // change the speed at which it zooms out
+        curve: 1, // change the speed at which it zooms out
 
         // This can be any easing function: it takes a number between
         // 0 and 1 and returns another number between 0 and 1.
