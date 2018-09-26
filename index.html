@@ -40,6 +40,8 @@
 <button id='fly'>Fly</button>
 <script>
 	
+// Bolshovky Island Center Coordinates 35.67460390284256,64.9706347685694 
+// Start Center 42.671546, 63.457334 Zoom 3
 	
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
 var start = [42.671546, 63.457334];
@@ -48,13 +50,13 @@ var map = new mapboxgl.Map({
     container: 'map', //container-id
     style: 'mapbox://styles/jeremywgoldsmith/cjmigyta86mlx2snzranr3eb0', //custom BYW mapbox basemap style
     center: start, //staring position
-    zoom: 3 //starting zoom
+    zoom: 3.5, //starting zoom
+    bearing: 30,
+    pitch: 3
 });
 	
 var isAtStart = true;
-	
-// Bolshovky Island Center Coordinates 35.67460390284256,64.9706347685694 
-// Start Center 42.671546, 63.457334 Zoom 3
+
 	
 document.getElementById('fly').addEventListener('click', function() {
     // depending on whether we're currently at point a or b, aim for
@@ -68,8 +70,8 @@ document.getElementById('fly').addEventListener('click', function() {
         // These options control the ending camera position: centered at
         // the target, at zoom level 9, and north up.
         center: target,
-        zoom: 12.2,
-        bearing: 30,
+        zoom: 12,
+        bearing: 0,
 
         // These options control the flight curve, making it move
         // slowly and zoom out almost completely before starting
