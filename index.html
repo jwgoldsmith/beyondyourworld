@@ -41,16 +41,18 @@
 // Bolshovky Island Center Coordinates 35.67460390284256, 64.9706347685694 
 // Angelisk Oblisk Province Center 42.671546, 63.457334 Zoom 3
 // Surgut City Cetner Coordinates = 73.52784272461815, 61.17434727269719 Zoom 3.5
+// Zoom 3.2 Start Coordinates = 61.255978455102905, 63.16228660985837
+// Archipelago Center = 35.84626789935814, 65.07166200345554 zooom level 10.5
 	
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
-var start = [73.52784272461815, 61.17434727269719];
-var end = [35.66342566316217,64.97198061767145];
+var start = [61.255978455102905, 63.16228660985837];
+var end = [35.84626789935814, 65.07166200345554];
 var map = new mapboxgl.Map({
     container: 'map', //container-id
     style: 'mapbox://styles/jeremywgoldsmith/cjmigyta86mlx2snzranr3eb0', //custom BYW mapbox basemap style
     center: start, //staring position
     zoom: 3.2, //starting zoom
-    pitch: 25, // starting tilt (or) pitch of the map (focused on the White Sea of Russia)
+    pitch: 15, // starting tilt (or) pitch of the map (focused on the White Sea of Russia)
     bearing: -25 // starting rotation or bearing of the map (angled to obtain sight of Scandinavia) 
 });
 	
