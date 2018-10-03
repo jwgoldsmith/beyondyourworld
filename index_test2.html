@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <title>Beyond Your World - UNESCO Zoom to Bolshoy Zayatsky</title>
+    <title>Beyond Your World Custom Animation 1 – Bolshoy Zayatsky UNESCO Site</title>
+    <meta name="author" content="Jeremy Goldsmith">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+          
+	<!-- MAKE COMMENTS AFTER the EXCLAMATION MARK -->
+
+	<body>
+	
+<style>
+    #fly {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        font-size: 5px;
+        text-align: right;
+        color: #fff;
+        background: #ee8a65;
+    }
+</style>
+<div id='map'></div>
+<br/>
+<button id='fly'>Fly</button>
+<script>
+	
+// Bolshovky Island Center Coordinates 35.67460390284256, 64.9706347685694 
+// Angelisk Oblisk Province Center 42.671546, 63.457334 Zoom 3
+// Surgut City Cetner Coordinates = 73.52784272461815, 61.17434727269719 Zoom 3.5
+// Zoom 3.2 Start Coordinates = 61.255978455102905, 63.16228660985837
+// Archipelago Center = 35.84626789935814, 65.07166200345554 zooom level 10.5
+	
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVyZW15d2dvbGRzbWl0aCIsImEiOiJVQnVsSjAwIn0.cVnUbjXRxH1JhgQkZolVxQ';
+var start = [61.255978455102905, 63.16228660985837];
+var end = [35.74626789935814, 65.05000000000];
+var map = new mapboxgl.Map({
+    container: 'map', //container-id
+    style: 'mapbox://styles/jeremywgoldsmith/cjmigyta86mlx2snzranr3eb0', //custom BYW mapbox basemap style
+    center: start, //staring position
+    zoom: 3.2, //starting zoom
+    pitch: 27, // starting tilt (or) pitch of the map (focused on the White Sea of Russia)
+    bearing: -25 // starting rotation or bearing of the map (angled to obtain sight of Scandinavia) 
+});
+	
+var isAtStart = true;
+	
+document.getElementById('fly').addEventListener('click', function() {
+    // depending on whether we're currently at point a or b, aim for
+    // point a or b
+    var target = isAtStart ? end : start;
+    // and now we're at the opposite point
+    isAtStart = !isAtStart;
+    map.flyTo({
+        // These options control the ending camera position: centered at
+        // the target, at zoom level 9, and north up.
+        center: target,
+        zoom: 10.2,
+        bearing: 0,
+	picth: 0,
+        // These options control the flight curve, making it move
+        // slowly and zoom out almost completely before starting
+        // to pan.
+        speed: 0.38, // make the flying slow
+        curve: 1.1, // change the speed at which it zooms out
+        // This can be any easing function: it takes a number between
+        // 0 and 1 and returns another number between 0 and 1.
+        easing: function (t) {
+            return t;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
